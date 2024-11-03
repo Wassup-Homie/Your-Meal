@@ -1,0 +1,146 @@
+.done__modal__wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+.done__modal {
+	background-color: #ffa500;
+	width: 684px;
+	height: 432px;
+	border-radius: 24px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.done__modal__content {
+	text-align: center;
+}
+
+.done__modal__title {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 600;
+	font-size: 30px;
+	color: #fff;
+	margin-bottom: 20px;
+}
+
+@media (max-width: 356px) {
+	.done__modal__title {
+		font-size: 20px;
+	}
+}
+
+.done__modal__close-btn {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.modal__image-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.done__modal__image {
+	height: auto;
+}
+
+@media (max-width: 356px) {
+	.done__modal__image {
+		height: fit-content;
+	}
+}
+
+.modal__close-btn,
+.done__modal__close-btn {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	transition: transform 0.4s ease, opacity 0.4s ease;
+	opacity: 0, 8; /* Начальная прозрачность */
+}
+
+.modal__close-btn:hover,
+.done__modal__close-btn:hover {
+	transform: rotate(180deg);
+	opacity: 1;
+}
+
+/* Тень и цвет при наведении */
+.modal__close-btn:hover img,
+.done__modal__close-btn:hover img {
+	filter: drop-shadow(0px 0px 8px rgb(255, 0, 0));
+}
+
+.modal__close-btn:hover,
+.done__modal__close-btn:hover {
+	animation: pulse 0.7s infinite alternate;
+}
+
+.done__modal__close-btn {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	background-color: rgba(
+		255,
+		255,
+		255,
+		0.9
+	); /* Лёгкий белый фон с прозрачностью */
+	border: none;
+	cursor: pointer;
+	border-radius: 50%;
+	padding: 8px;
+	transition: background-color 0.3s ease, transform 0.2s ease,
+		box-shadow 0.2s ease;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Лёгкая тень для объёмного эффекта */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.done__modal__close-btn:hover {
+	background-color: rgb(255, 93, 231); /* Полный белый фон при наведении */
+	transform: scale(1.1); /* Лёгкое увеличение */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Немного усиленная тень при наведении */
+}
+
+.done__modal__close-btn:active {
+	transform: scale(0.95); /* Лёгкое уменьшение при нажатии */
+}
+
+.done__modal__close-btn img {
+	width: 16px;
+	height: 16px;
+	filter: brightness(0.6); /* Тёмный оттенок значка для лучшего контраста */
+	transition: filter 0.2s ease;
+}
+
+@media (max-width: 356px) {
+	.done__modal__close-btn img {
+		width: 10px;
+		height: 10px;
+	}
+}
+
+.done__modal__close-btn:hover img {
+	filter: brightness(0.4); /* Ещё более тёмный значок при наведении */
+}

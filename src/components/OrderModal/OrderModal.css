@@ -1,0 +1,162 @@
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+.modal {
+	display: flex;
+	border-radius: 24px;
+	width: 800px;
+	overflow: hidden;
+	box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+	background-color: #f9f9f9;
+}
+
+@media (max-width: 854px) {
+	.modal {
+		width: 684px;
+		height: 550px;
+	}
+}
+
+.modal__image-section {
+	flex: 1;
+	background-color: #ffa500;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media (max-width: 356px) {
+	.modal__image-section {
+		display: none !important;
+	}
+}
+
+@media (max-width: 356px) {
+	.modal__image-section img {
+		display: none;
+	}
+}
+
+.modal__image {
+	max-width: 80%;
+	border-radius: 8px;
+}
+
+.modal__form-section {
+	position: relative;
+	flex: 1;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+.modal__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.modal__title {
+	margin: 0;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 100%;
+	color: #000;
+}
+
+.modal__close-btn {
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.modal__form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.modal__input {
+	width: 100%;
+	border: 1px solid #f2f2f3;
+	border-radius: 12px;
+	padding: 12px;
+	background-color: #fff;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 130%;
+	color: #333333;
+}
+
+.modal__radio-group {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+.modal__radio-label {
+	display: flex;
+	align-items: center;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	color: #000;
+	gap: 5px;
+}
+
+.modal__input-row {
+	display: flex;
+	gap: 10px;
+}
+
+.modal__submit-btn {
+	background-color: #ff6600;
+	color: white;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	font-size: 1em;
+	cursor: pointer;
+}
+
+.modal__label {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 10px;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	color: #333;
+}
+
+.modal__required {
+	color: red;
+	font-weight: bold;
+	margin-left: 4px;
+}
+
+.modal__input--error {
+	border: 1px solid red;
+}
+
+.modal__error {
+	color: red;
+	font-size: 12px;
+	margin-top: 4px;
+	font-family: 'Nunito', sans-serif;
+}

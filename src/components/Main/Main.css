@@ -1,0 +1,13 @@
+.menu {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 30px;
+	margin-bottom: 100px;
+}
+
+@media (max-width: 1060px) {
+	.menu {
+		flex-direction: column;
+	}
+}

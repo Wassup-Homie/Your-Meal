@@ -1,0 +1,212 @@
+.footer {
+	width: 100%;
+	max-width: 1920px;
+	margin: 0 auto;
+}
+
+.footer__content {
+	background-color: #fff;
+	width: 100%;
+	max-width: 1920px;
+	margin: 0 auto;
+	padding: 30px 50px;
+}
+
+@media (max-width: 356px) {
+	.footer__content {
+		padding: 20px 10px;
+	}
+}
+
+.footer__wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 1440px;
+	width: 100%;
+	margin: 0 auto;
+	margin-bottom: 35px;
+}
+
+@media (max-width: 854px) {
+	.footer__wrapper {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+.footer__logo {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+@media (max-width: 854px) {
+	.footer__logo img {
+		width: 198px;
+		height: 43px;
+	}
+}
+
+.footer__call {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+@media (max-width: 854px) {
+	.footer__call {
+		margin-right: 177px;
+	}
+}
+
+.footer__call-text {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 100%;
+	color: #000;
+	margin-bottom: 24px;
+	text-align: center;
+}
+
+@media (max-width: 854px) {
+	.footer__call-text {
+		font-size: 18px;
+		margin-bottom: 8px;
+	}
+}
+
+@media (max-width: 356px) {
+	.footer__call-text {
+		font-size: 16px;
+	}
+}
+
+.info__bar {
+	display: flex;
+	align-items: center;
+	gap: 50px;
+}
+
+@media (max-width: 854px) {
+	.info__bar {
+		margin-top: 36px;
+		justify-content: center;
+	}
+}
+
+@media (max-width: 356px) {
+	.info__bar {
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		width: 320px;
+	}
+}
+
+.footer__call-contact {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.footer__phone-icon {
+	width: 24px;
+	height: 24px;
+}
+
+.footer__call-number {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 130%;
+	color: #000;
+	text-decoration: none;
+	transition: color 0.3s ease, text-shadow 0.3s ease; /* Плавный переход для цвета и тени */
+}
+
+@media (max-width: 854px) {
+	.footer__call-number {
+		font-size: 12px;
+	}
+}
+
+.footer__call-number:hover {
+	color: #ff6600; /* Изменяем цвет номера на оранжевый при наведении */
+	text-shadow: 0 0 5px rgba(255, 102, 0, 0.5); /* Легкое свечение */
+}
+
+.footer__socials {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+@media (max-width: 854px) {
+	.footer__socials {
+		gap: 0px;
+	}
+}
+
+.socials {
+	display: flex;
+	align-items: flex-start;
+	gap: 16px;
+}
+
+.footer__social-icon img {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 36px;
+	height: 36px;
+}
+
+.footer__social-text {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 100%;
+	color: #000;
+}
+
+@media (max-width: 854px) {
+	.footer__social-text {
+		margin-bottom: 8px;
+		font-size: 16px;
+	}
+}
+
+.footer__social-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 36px;
+	height: 36px;
+	transition: transform 0.3s ease, filter 0.3s ease; /* Плавный переход для масштабирования и изменения цвета */
+}
+
+.footer__social-icon:hover {
+	transform: scale(1.1); /* Масштабируем иконку при наведении */
+}
+
+/* Цвет при наведении для ВКонтакте */
+.footer__social-icon:nth-child(1):hover img {
+	filter: brightness(0) saturate(100%) invert(38%) sepia(12%) saturate(4000%)
+		hue-rotate(195deg) brightness(93%) contrast(88%);
+}
+
+/* Цвет при наведении для Telegram */
+.footer__social-icon:nth-child(2):hover img {
+	filter: brightness(0) saturate(100%) invert(49%) sepia(29%) saturate(2389%)
+		hue-rotate(154deg) brightness(97%) contrast(101%);
+}
+
+.footer__copyright {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	color: #000;
+	margin: 0 auto;
+}

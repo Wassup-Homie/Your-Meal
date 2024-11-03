@@ -1,0 +1,73 @@
+.menu__links {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 24px;
+	margin-bottom: 60px;
+}
+
+.menu__button {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	border-radius: 50px;
+	border: 2px solid transparent; /* начальный прозрачный бордер */
+	padding: 8px 14px;
+	background-color: #fff;
+	transition: border 0.5s, background-color 0.5s; /* плавный переход для бордера и фона */
+}
+
+@media (max-width: 854px) {
+	.menu__button {
+		padding: 3px 8px;
+	}
+}
+
+.menu__button:hover {
+	border: 2px solid #ff6a00; /* более яркий цвет и увеличенная толщина бордера */
+	background-color: #f9f9f9; /* немного изменённый цвет фона при наведении */
+}
+
+.menu__button.active {
+	border-color: #f75600;
+	background-color: #ffaa00;
+}
+
+.btn__name {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	color: #000;
+}
+
+@media (max-width: 854px) {
+	.btn__name {
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 356px) {
+	.btn__name {
+		font-size: 10px;
+	}
+}
+
+.menu__title {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 600;
+	font-size: 40px;
+	line-height: 120%;
+	color: #000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto 24px 0;
+}
+
+@media (max-width: 854px) {
+	.menu__title {
+		font-size: 28px;
+	}
+}

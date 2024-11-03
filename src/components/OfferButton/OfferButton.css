@@ -1,0 +1,15 @@
+.offer__btn {
+	border-radius: 12px;
+	padding: 12px 107px;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 100%;
+	color: #fff;
+	background-color: #f2f2f3;
+	transition: background-color 0.5s;
+}
+
+.offer__btn:hover {
+	background-color: #ffab08;
+}

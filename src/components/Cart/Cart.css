@@ -1,0 +1,316 @@
+.order__cart {
+	border-radius: 18px;
+	width: 100%;
+	max-width: 340px; /* Увеличенная ширина корзины */
+	min-height: 109px;
+	background-color: #fff;
+	padding: 24px 16px;
+}
+
+@media (max-width: 854px) {
+	.order__cart {
+		border-radius: 12px;
+		padding: 16px 10px;
+		max-width: 300px;
+		min-height: 100px;
+	}
+}
+
+@media (max-width: 356px) {
+	.order__cart {
+		border-radius: 12px;
+		padding: 16px 10px;
+		max-width: 300px;
+		min-height: 48px;
+	}
+}
+
+.cart__description {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	margin-bottom: 12px;
+}
+
+.cart__name {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 100%;
+	color: #000;
+	margin: 0 0 16px 0;
+}
+
+@media (max-width: 854px) {
+	.cart__name {
+		font-size: 16px;
+	}
+}
+
+.cart__item {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 130%;
+	color: #000;
+	margin: 0;
+}
+
+@media (max-width: 854px) {
+	.cart__item {
+		font-size: 12px;
+	}
+}
+
+.cart__items {
+	max-height: 300px;
+	overflow-y: auto;
+	overflow-x: hidden; /* Убираем боковую прокрутку */
+}
+
+/* Кастомизация скроллбара для WebKit */
+.cart__items::-webkit-scrollbar {
+	width: 8px;
+}
+
+.cart__items::-webkit-scrollbar-track {
+	background: #f2f2f3;
+	border-radius: 10px;
+}
+
+.cart__items::-webkit-scrollbar-thumb {
+	background-color: #b1b1b1;
+	border-radius: 10px;
+	border: 2px solid #f2f2f3;
+}
+
+/* Прокрутка для Firefox */
+.cart__items {
+	scrollbar-width: thin;
+	scrollbar-color: #b1b1b1 #f2f2f3;
+}
+
+.cart__products {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 12px;
+}
+
+.cart__title {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 100%;
+	color: #000;
+}
+
+@media (max-width: 854px) {
+	.cart__title {
+		font-size: 16px;
+	}
+}
+
+.counter {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	text-align: center;
+	color: #000;
+	padding: 2px 16px;
+	border-radius: 6px;
+	background-color: #f2f2f3;
+}
+
+@media (max-width: 854px) {
+	.counter {
+		font-size: 12px;
+		padding: 1px 13px;
+		font-size: 10px;
+	}
+}
+
+.order__info {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	max-width: 320px; /* Увеличенная ширина для корректного размещения текста */
+	margin-bottom: 15px;
+}
+
+.order__info img {
+	margin-right: 6px;
+	border-radius: 8px;
+	width: 64px;
+	height: 52px;
+}
+
+.food__name {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	color: #000;
+	margin-bottom: 1px;
+}
+
+.food__weight {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	color: #b1b1b1;
+	margin-bottom: 6px;
+}
+
+.food__price {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	color: #000;
+}
+
+.food__items {
+	flex: 1; /* Расширение блока с информацией о продукте */
+	margin-right: 20px; /* Уменьшаем отступ, чтобы было больше места для текста */
+}
+
+.counters {
+	display: flex;
+	align-items: center;
+	gap: 8px; /* Уменьшенный gap для компактного размещения */
+	border-radius: 12px;
+	padding: 6px 10px; /* Уменьшенное значение padding */
+	background-color: #f2f2f3;
+	flex-shrink: 0; /* Защищаем ширину счётчика от сжатия */
+}
+
+@media (max-width: 854px) {
+	.counters {
+		padding: 7px 8px;
+		gap: 2px; /* Уменьшенный gap для компактного размещения */
+	}
+}
+
+.increment__btn,
+.decrement__btn {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	color: #000;
+	background-color: #f2f2f3;
+	border: none;
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+@media (max-width: 854px) {
+	.increment__btn,
+	.decrement__btn {
+		font-size: 12px;
+	}
+}
+
+.increment__btn:hover,
+.decrement__btn:hover {
+	background-color: #e0e0e0;
+	color: #333;
+}
+
+.increment__btn:active,
+.decrement__btn:active {
+	background-color: #d0d0d0;
+	color: #000;
+}
+
+.counter__prod {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	color: #000;
+	text-align: center;
+	min-width: 20px; /* Минимальная ширина для выравнивания */
+}
+
+@media (max-width: 854px) {
+	.counter__prod {
+		font-size: 12px;
+	}
+}
+
+.line {
+	margin-bottom: 15px;
+}
+
+@media (max-width: 854px) {
+	.line {
+		margin-bottom: 13px;
+	}
+}
+
+.order__button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 8px;
+}
+
+.result {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 16px;
+	margin-bottom: 24px;
+}
+
+.result__title {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 130%;
+	color: #000;
+}
+
+@media (max-width: 854px) {
+	.result__title {
+		font-size: 12px;
+	}
+}
+
+.result__price {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 130%;
+	text-align: right;
+	color: #000;
+}
+
+@media (max-width: 854px) {
+	.result__price {
+		font-size: 12px;
+	}
+}
+
+.delivery__info {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.delivery__status {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	color: #000;
+}
+
+@media (max-width: 854px) {
+	.delivery__status {
+		font-size: 10px;
+	}
+}
