@@ -13,6 +13,7 @@ export default function Main() {
 		return savedCart ? JSON.parse(savedCart) : []
 	})
 
+	// Синхронизация корзины с localStorage
 	useEffect(() => {
 		localStorage.setItem('cartItems', JSON.stringify(cartItems))
 	}, [cartItems])

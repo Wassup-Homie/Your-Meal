@@ -11,7 +11,19 @@ export default function OrderModal({ onClose, onConfirm }) {
 	const [intercom, setIntercom] = useState('')
 	const [errors, setErrors] = useState({})
 
+	// Загрузка сохраненных данных пользователя при монтировании компонента
 	useEffect(() => {
+		const savedUserData = localStorage.getItem('userData')
+		if (savedUserData) {
+			const { name, phone, address, floor, intercom } =
+				JSON.parse(savedUserData)
+			setName(name)
+			setPhone(phone)
+			setAddress(address)
+			setFloor(floor)
+			setIntercom(intercom)
+		}
+
 		document.body.style.overflow = 'hidden'
 
 		const handleEsc = event => {
@@ -27,6 +39,7 @@ export default function OrderModal({ onClose, onConfirm }) {
 		}
 	}, [onClose])
 
+	// Функция для валидации данных
 	const validate = () => {
 		const newErrors = {}
 		if (!/^[a-zA-Zа-яА-Я]+$/.test(name))
@@ -39,36 +52,13 @@ export default function OrderModal({ onClose, onConfirm }) {
 		return Object.keys(newErrors).length === 0
 	}
 
+	// Сохранение данных пользователя в localStorage при отправке формы
 	const handleSubmit = event => {
 		event.preventDefault()
 		if (validate()) {
-			onConfirm()
-		}
-	}
-
-	const handleNameChange = event => {
-		const value = event.target.value
-		if (/^[a-zA-Zа-яА-Я]*$/.test(value)) {
-			setName(value)
-			setErrors(prev => ({ ...prev, name: '' }))
-		} else {
-			setErrors(prev => ({
-				...prev,
-				name: 'Имя должно содержать только буквы',
-			}))
-		}
-	}
-
-	const handlePhoneChange = event => {
-		const value = event.target.value
-		if (/^\+?\d*$/.test(value)) {
-			setPhone(value)
-			setErrors(prev => ({ ...prev, phone: '' }))
-		} else {
-			setErrors(prev => ({
-				...prev,
-				phone: 'Телефон должен содержать только цифры и знак +',
-			}))
+			const userData = { name, phone, address, floor, intercom }
+			localStorage.setItem('userData', JSON.stringify(userData)) // Сохранение данных пользователя
+			onConfirm() // Завершение заказа
 		}
 	}
 
@@ -97,7 +87,7 @@ export default function OrderModal({ onClose, onConfirm }) {
 								}`}
 								placeholder='Ваше имя'
 								value={name}
-								onChange={handleNameChange}
+								onChange={e => setName(e.target.value)}
 								required
 							/>
 							{errors.name && <p className='modal__error'>{errors.name}</p>}
@@ -112,34 +102,11 @@ export default function OrderModal({ onClose, onConfirm }) {
 								}`}
 								placeholder='Телефон'
 								value={phone}
-								onChange={handlePhoneChange}
+								onChange={e => setPhone(e.target.value)}
 								required
 							/>
 							{errors.phone && <p className='modal__error'>{errors.phone}</p>}
 						</label>
-
-						<div className='modal__radio-group'>
-							<label className='modal__radio-label'>
-								<input
-									type='radio'
-									name='delivery'
-									value='pickup'
-									checked={deliveryMethod === 'pickup'}
-									onChange={() => setDeliveryMethod('pickup')}
-								/>
-								Самовывоз
-							</label>
-							<label className='modal__radio-label'>
-								<input
-									type='radio'
-									name='delivery'
-									value='delivery'
-									checked={deliveryMethod === 'delivery'}
-									onChange={() => setDeliveryMethod('delivery')}
-								/>
-								Доставка
-							</label>
-						</div>
 
 						{deliveryMethod === 'delivery' && (
 							<label className='modal__label'>
